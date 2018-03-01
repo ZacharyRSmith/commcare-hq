@@ -1,4 +1,5 @@
 from __future__ import absolute_import
+from __future__ import unicode_literals
 import base64
 
 import datetime
@@ -437,7 +438,7 @@ class SubmissionErrorLog(XFormError):
     md5 = StringProperty()
 
     def __unicode__(self):
-        return u"Doc id: %s, Error %s" % (self.get_id, self.problem)
+        return "Doc id: %s, Error %s" % (self.get_id, self.problem)
 
     def get_xml(self):
         return self.fetch_attachment(ATTACHMENT_NAME)
